@@ -2,6 +2,13 @@ require 'rails_helper'
 
 RSpec.describe SongsController do
 
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
+  end
+
   before do
     Song.destroy_all
     Artist.destroy_all
